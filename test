@@ -1,0 +1,4 @@
+PyTorch是由Facebook人工智能研究小组开发的一种基于Lua编写的Torch库的Python实现的深度学习库，
+目前被广泛应用于学术界和工业界，而随着Caffe2项目并入Pytorch， 
+Pytorch开始影响到TensorFlow在深度学习应用框架领域的地位。
+总的来说，PyTorch是当前难得的简洁优雅且高效快速的框架。因此本课程我们选择了PyTorch来进行开源学习。
