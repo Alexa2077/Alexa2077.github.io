@@ -53,7 +53,7 @@
 
 
     
-<link rel="stylesheet" href="/.css">
+<link rel="stylesheet" href="/css/style/main.css">
  
 
     
@@ -201,29 +201,6 @@
 
 
 
-    <div class="post__comments content-card" id="comment">
-        
-    <h4>评论</h4>
-    
-    
-    <div id="disqusjs">您所在的地区可能无法访问 Disqus 评论系统，请切换网络环境再尝试。</div>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-    </div>
-
 
 
 </main>
@@ -295,73 +272,6 @@
 
  
 
-
-    
-
-    
-<script>
-    function loadComment() {
-        let e, i;
-        (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/disqusjs@3.0/dist/browser/disqusjs.es2015.umd.min.js',
-        document.body.appendChild(e);
-        e.onload = () => {
-            const disqusjs = new DisqusJS({
-                shortname: "",
-                siteName: "Alexa2077‘s Blogs",
-                api: "",
-                apikey: "",
-                admin: "",
-                adminLabel: "",
-                identifier: "2025/05/18/test/",
-                url: "http://example.com/2025/05/18/test/",
-                nesting: "2"
-            });
-            disqusjs.render(document.getElementById('disqusjs'));
-        };
-        (i = document.createElement("link")).rel = "stylesheet",
-        i.href = 'https://cdn.jsdelivr.net/npm/disqusjs@3.0/dist/browser/styles/disqusjs.min.css',
-        document.head.appendChild(i);
-    }
-
-    var runningOnBrowser = typeof window !== "undefined";
-    var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-    var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
-
-    setTimeout(function () {
-        if (!isBot && supportsIntersectionObserver) {
-            var comment_observer = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) {
-                    loadComment();
-                    comment_observer.disconnect();
-                }
-            }, { threshold: [0] });
-            comment_observer.observe(document.getElementById('comment'));
-        } else {
-            loadComment();
-        }
-    }, 1);
-</script>
-
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
 
 
 
