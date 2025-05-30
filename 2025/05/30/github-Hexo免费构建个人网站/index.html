@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+    
+    
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>github+Hexo免费构建个人网站 | Alexa2077‘s Blogs</title>
+
+
+    <meta name="keywords" content="Hexo, github, 个人网站">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="Hexo 是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo + GitHub 文章发布原理  主要分为以下几个步骤：  1，hexo环境搭建； 2，github部署； 3，网站配置； 4，发表第一篇blog；  1 hexo环境搭建1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github+Hexo免费构建个人网站">
+<meta property="og:url" content="http://example.com/2025/05/30/github-Hexo%E5%85%8D%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="Alexa2077‘s Blogs">
+<meta property="og:description" content="Hexo 是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo + GitHub 文章发布原理  主要分为以下几个步骤：  1，hexo环境搭建； 2，github部署； 3，网站配置； 4，发表第一篇blog；  1 hexo环境搭建1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/hexo%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/2hexo%E5%8E%9F%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="http://example.com/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/3%E7%AC%AC%E4%B8%80%E7%AF%87.png">
+<meta property="article:published_time" content="2025-05-30T09:14:29.000Z">
+<meta property="article:modified_time" content="2025-05-30T09:18:07.484Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="个人网站">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/hexo%E6%B5%81%E7%A8%8B.png">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Alexa2077‘s Blogs</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+                    <a href="/page/" class="navbar-menu button">Page</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+                    <a href="/page/" class="dropdown-menu button">Page</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        github+Hexo免费构建个人网站
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2025/05/" class="post-meta__date button">2025-05-30</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <p>Hexo <font style="color:rgb(25, 27, 31);">是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub。</font>Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p><strong><font style="color:rgb(25, 27, 31);">Hexo + GitHub 文章发布原理</font></strong></p>
+<p><img src="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/hexo%E6%B5%81%E7%A8%8B.png" class="lazy" data-srcset="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/hexo%E6%B5%81%E7%A8%8B.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt="alt text"></p>
+<p>主要分为以下几个步骤：</p>
+<ul>
+<li>1，hexo环境搭建；</li>
+<li>2，github部署；</li>
+<li>3，网站配置；</li>
+<li>4，发表第一篇blog；</li>
+</ul>
+<h1 id="1-hexo环境搭建"><a href="#1-hexo环境搭建" class="headerlink" title="1 hexo环境搭建"></a>1 hexo环境搭建</h1><h2 id="1-1-环境准备"><a href="#1-1-环境准备" class="headerlink" title="1.1 环境准备"></a><font style="color:rgb(25, 27, 31);">1.1 环境准备</font></h2><p><font style="color:rgb(25, 27, 31);">Hexo 基于 Node.js，搭建过程中还需要使用 npm（Node.js 已带） 和 git，因此先搭建本地操作环境，安装 Node.js 和 Git。</font></p>
+<ul>
+<li><font style="color:rgb(25, 27, 31);">Node.js：</font><a href="https://link.zhihu.com/?target=https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li>
+<li><font style="color:rgb(25, 27, 31);">Git：</font><a href="https://link.zhihu.com/?target=https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+</ul>
+<p><font style="color:rgb(25, 27, 31);">下载 Node.js 和 Git 程序并安装，一路点 “下一步” 按默认配置完成安装。</font></p>
+<h2 id="1-2-安装Hexo"><a href="#1-2-安装Hexo" class="headerlink" title="1.2 安装Hexo"></a>1.2 安装Hexo</h2><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>如果是mac用户，前面加上 sudo：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-3-初始化博客"><a href="#1-3-初始化博客" class="headerlink" title="1.3 初始化博客"></a>1.3 初始化博客</h2><p>安装 Hexo 完成后，你可以新建一个文件夹来存放hexo的程序文件，如hexo-blog；</p>
+<p>然后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-本地预览"><a href="#1-4-本地预览" class="headerlink" title="1.4 本地预览"></a>1.4 本地预览</h2><p><font style="color:rgb(25, 27, 31);">完成后依次输入下面命令，</font><strong><font style="color:rgb(25, 27, 31);">启动本地服务器进行预览</font></strong><font style="color:rgb(25, 27, 31);">：</font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate  <span class="comment"># 生成页面</span></span><br></pre></td></tr></table></figure>
+
+<p>该命令也可以简写为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br></pre></td></tr></table></figure>
+
+<p>完成生成过后即可执行下列命令，在本地开启服务。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server  <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
+
+<p>该命令也可以简写为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s  <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><font style="color:rgb(25, 27, 31);">访问 </font></strong><code>&lt;font style=&quot;color:rgb(25, 27, 31);background-color:rgb(248, 248, 250);&quot;&gt;http://localhost:4000&lt;/font&gt;</code><strong><font style="color:rgb(25, 27, 31);">，出现 Hexo 默认页面，本地博客安装成功！</font></strong></p>
+<p><img src="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/2hexo%E5%8E%9F%E7%95%8C%E9%9D%A2.png" class="lazy" data-srcset="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/2hexo%E5%8E%9F%E7%95%8C%E9%9D%A2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt="alt text"></p>
+<h1 id="2-Github部署"><a href="#2-Github部署" class="headerlink" title="2 Github部署"></a>2 Github部署</h1><p><font style="color:rgb(25, 27, 31);">部署 Hexo 到 GitHub Pages，本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问。</font></p>
+<h2 id="2-1-配置git"><a href="#2-1-配置git" class="headerlink" title="2.1 配置git"></a>2.1 配置git</h2><p>打开 Terminal，取消 ssl 认证：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> http.sslVerify false</span><br></pre></td></tr></table></figure>
+
+<p>设置 user.name 和 user.email 配置信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">&quot;你的 GitHub 用户名&quot;</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email <span class="string">&quot;你的 GitHub 注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>生成 ssh 密钥文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;你的 GitHub 注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后直接三个回车即可，默认不需要设置密码。你应该会看到如下输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (C:\Users\用户名/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> C:\Users\用户名/.ssh/id_rsa</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> C:\Users\用户名/.ssh/id_rsa.pub</span><br><span class="line">The key fingerprint <span class="keyword">is</span>:</span><br><span class="line">SHA256:66taKe0S8vRMPMJnjCi/GaDgi+oEaPAJy71QEBFX7+Y</span><br><span class="line">The key<span class="string">&#x27;s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 3072]----+</span></span><br><span class="line"><span class="string">| =+...           |</span></span><br><span class="line"><span class="string">|  o   .          |</span></span><br><span class="line"><span class="string">|o  .   .         |</span></span><br><span class="line"><span class="string">|++o.  .          |</span></span><br><span class="line"><span class="string">|*+o+ + oS        |</span></span><br><span class="line"><span class="string">|B.+ B.X. .       |</span></span><br><span class="line"><span class="string">|.=.=.O+E.        |</span></span><br><span class="line"><span class="string">|o ooo+o.         |</span></span><br><span class="line"><span class="string">|=oo..oo.o.       |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>在C:\Users\用户名&#x2F;.ssh&#x2F;id_rsa.pub处找到生成的id_rsa.pub 密钥，复制其中全部内容。</p>
+<h2 id="2-2-配置github"><a href="#2-2-配置github" class="headerlink" title="2.2 配置github"></a>2.2 配置github</h2><p>使用邮箱注册 GitHub 帐号并登录；</p>
+<p>点击右上角加号图标，选择 New repository 创建一个新仓库，仓库名为：用户名.github.io，该 用户名 使用自己的 GitHub 帐号名称代替。</p>
+<p>打开 GitHub_Settings_keys 页面，点击 New SSH key 按钮，Title 处为本台计算机取一个名字，然后将刚刚复制的 id_rsa.pub 内容粘贴进去，最后点击 Add SSH key。</p>
+<h2 id="2-3-配置hexo"><a href="#2-3-配置hexo" class="headerlink" title="2.3 配置hexo"></a>2.3 配置hexo</h2><p>打开 blog 根目录里的_config.yml文件，也称为 站点配置文件。</p>
+<p>在站点配置文件的最后，修改为如下形式并保存：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: https://用户名/用户名.github.io.git</span><br><span class="line">branch: main</span><br></pre></td></tr></table></figure>
+
+<p>打开 Terminal 安装 Git 部署插件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-部署博客到-Github-Page"><a href="#2-4-部署博客到-Github-Page" class="headerlink" title="2.4 部署博客到 Github Page"></a>2.4 部署博客到 Github Page</h2><p>输入以下命令完成生成与部署：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<p>完成后打开浏览器，在地址栏输入博客所在仓库的路径，即 “http:&#x2F;&#x2F;用户名.github.io”，即可通过互联网访问生成的博客。</p>
+<h1 id="3-网站配置"><a href="#3-网站配置" class="headerlink" title="3 网站配置"></a>3 网站配置</h1><p>打开 blog 根目录里的_config.yml文件，也称为 站点配置文件。下面只介绍一些必要的选项：</p>
+<p>根据自己的博客需要更改设置。</p>
+<h2 id="3-1-网站"><a href="#3-1-网站" class="headerlink" title="3.1 网站"></a>3.1 网站</h2><table>
+<thead>
+<tr>
+<th><strong><font style="color:rgb(76, 77, 78);">参数</font></strong></th>
+<th><strong><font style="color:rgb(76, 77, 78);">描述</font></strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;title&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站标题</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;subtitle&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站副标题</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;description&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站描述</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;keywords&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站的关键词。支持多个关键词。</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;author&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">您的名字</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;language&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站使用的语言。</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;timezone&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">网站时区。Hexo 默认使用您电脑的时区。</font></td>
+</tr>
+</tbody></table>
+<h2 id="3-2-写作"><a href="#3-2-写作" class="headerlink" title="3.2 写作"></a>3.2 写作</h2><p><font style="color:rgb(76, 77, 78);">默认不需要更改。</font></p>
+<table>
+<thead>
+<tr>
+<th><strong><font style="color:rgb(76, 77, 78);">参数</font></strong></th>
+<th><strong><font style="color:rgb(76, 77, 78);">描述</font></strong></th>
+<th><strong><font style="color:rgb(76, 77, 78);">默认值</font></strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;new_post_name&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">新文章的文件名称</font></td>
+<td><font style="color:rgb(76, 77, 78);">:title.md</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;default_layout&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">预设布局</font></td>
+<td><font style="color:rgb(76, 77, 78);">post</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;titlecase&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">把标题转换为 title case</font></td>
+<td><font style="color:rgb(76, 77, 78);">false</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;external_link&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">在新标签中打开链接</font></td>
+<td><font style="color:rgb(76, 77, 78);">true</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;external_link.enable&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">在新标签中打开链接</font></td>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;true&lt;/font&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;external_link.field&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">对整个网站（</font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;site&lt;/font&gt;</code><br><font style="color:rgb(76, 77, 78);">）生效或仅对文章（</font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;post&lt;/font&gt;</code><br><font style="color:rgb(76, 77, 78);">）生效</font></td>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;site&lt;/font&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;external_link.exclude&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">需要排除的域名。主域名和子域名如 </font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;www&lt;/font&gt;</code><br><font style="color:rgb(76, 77, 78);"> 需分别配置</font></td>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;[]&lt;/font&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;filename_case&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">把文件名称转换为 (1) 小写或 (2) 大写</font></td>
+<td><font style="color:rgb(76, 77, 78);">0</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;render_drafts&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">显示草稿</font></td>
+<td><font style="color:rgb(76, 77, 78);">false</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;post_asset_folder&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">启动 </font><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders"><font style="color:rgb(3, 102, 214);">Asset 文件夹</font></a></td>
+<td><font style="color:rgb(76, 77, 78);">false</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;relative_link&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">把链接改为与根目录的相对位址</font></td>
+<td><font style="color:rgb(76, 77, 78);">false</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;future&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">显示未来的文章</font></td>
+<td><font style="color:rgb(76, 77, 78);">true</font></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;highlight&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">代码块的设置, 请参考 </font><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight#Highlight-js"><font style="color:rgb(3, 102, 214);">Highlight.js</font></a><br><font style="color:rgb(76, 77, 78);"> 进行设置</font></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;prismjs&lt;/font&gt;</code></td>
+<td><font style="color:rgb(76, 77, 78);">代码块的设置, 请参考 </font><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS"><font style="color:rgb(3, 102, 214);">PrismJS</font></a><br><font style="color:rgb(76, 77, 78);"> 进行设置</font></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="3-3-主题配置"><a href="#3-3-主题配置" class="headerlink" title="3.3 主题配置"></a>3.3 主题配置</h2><p>Hexo 默认的主题不太好看，不过官方提供了数百种主题供用户选择，可以根据个人喜好更换。</p>
+<p><font style="color:rgb(76, 77, 78);">这里以 </font><a target="_blank" rel="noopener" href="https://github.com/ChrAlpha/hexo-theme-cards/"><font style="color:rgb(3, 102, 214);">Card</font></a><font style="color:rgb(76, 77, 78);"> 主题为例。详细配置方法可以参考 </font><a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/start/"><font style="color:rgb(3, 102, 214);">Theme Cards 参考手册</font></a><font style="color:rgb(76, 77, 78);">。</font></p>
+<p><font style="color:rgb(76, 77, 78);">可以使用 Git 拉取「Cards」，以后还可以使用 </font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;git pull&lt;/font&gt;</code><font style="color:rgb(76, 77, 78);"> 直接更新「Cards」。在站点根目录打开终端，并执行：</font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:rgb(76, 77, 78);">在站点配置文件中，将 </font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;theme&lt;/font&gt;</code><font style="color:rgb(76, 77, 78);"> 的值改为 </font><code>&lt;font style=&quot;color:rgb(76, 77, 78);background-color:rgb(238, 238, 238);&quot;&gt;cards&lt;/font&gt;</code><font style="color:rgb(76, 77, 78);">。</font></p>
+<p><font style="color:rgb(106, 115, 125);">如果获取「Cards」时你将文件夹重命名为其他名字，请将 </font><code>&lt;font style=&quot;color:rgb(106, 115, 125);background-color:rgb(238, 238, 238);&quot;&gt;cards&lt;/font&gt;</code><font style="color:rgb(106, 115, 125);"> 对应为你重命名文件夹的名字。</font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: cards</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="4-发布第一篇blog"><a href="#4-发布第一篇blog" class="headerlink" title="4 发布第一篇blog"></a>4 发布第一篇blog</h1><h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;name&quot;</span>       <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">&quot;name&quot;</span>  <span class="comment"># 新建页面</span></span><br><span class="line">hexo g                <span class="comment"># 生成页面</span></span><br><span class="line">hexo d                <span class="comment"># 部署</span></span><br><span class="line">hexo g -d             <span class="comment"># 生成页面并部署</span></span><br><span class="line">hexo s                <span class="comment"># 本地预览</span></span><br><span class="line">hexo clean            <span class="comment"># 清除缓存和已生成的静态文件</span></span><br><span class="line">hexo <span class="built_in">help</span>             <span class="comment"># 帮助</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-1-创建博客："><a href="#4-1-创建博客：" class="headerlink" title="4.1 创建博客："></a>4.1 创建博客：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new xxblog</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:rgb(77, 77, 77);">创建成功后，博客位于 </font><font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">&#x2F;source&#x2F;_post</font></p>
+<p>打开该博客之后可以看到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test1</span><br><span class="line">date: <span class="number">2025</span>-05-<span class="number">30</span> <span class="number">15</span>:05:<span class="number">52</span></span><br><span class="line">tags:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里写关于页的正文，支持 Markdown语法；</span><br></pre></td></tr></table></figure>
+
+<p>本地启动进行预览：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>：</p>
+<h2 id="4-2-管理图片"><a href="#4-2-管理图片" class="headerlink" title="4.2 管理图片"></a>4.2 管理图片</h2><p>一篇情况下，需要在source下面新建image文件夹，进行放置图片，但是如果未来图片的数据增加，不好引用，不方便管理。那我们可以采用下面的方式：</p>
+<p>如下修改 Hexo 博客目录中的 _config.yml，打开这个配置是为了在生成文章的时候生成一个同名的资源目录用于存放图片文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+<p>执行如下命令创建一篇新文章，名为test1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new test</span><br></pre></td></tr></table></figure>
+
+<p>执行完成后在source_posts目录下生成了一个md文件和一个同名的资源目录(用于存放图片)</p>
+<p>我们在test文件夹下面放一张图片 image.png</p>
+<p>在test1.md中添加内容如下，演示了图片的引用方式。本文主要markdown语法：</p>
+<p>这种方式的缺点就是，无法在markdwon里面展示，但是可以在web界面上展示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: test1</span><br><span class="line">date: <span class="number">2025</span>-05-<span class="number">30</span> <span class="number">15</span>:05:<span class="number">52</span></span><br><span class="line">tags:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这是图片测试：</span><br><span class="line"></span><br><span class="line">![alt text](dog.png)</span><br></pre></td></tr></table></figure>
+
+<p>本地启动：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>，页面如下，文章添加成功</p>
+<p><img src="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/3%E7%AC%AC%E4%B8%80%E7%AF%87.png" class="lazy" data-srcset="/2025/05/18/hello-world/%E8%B4%B9%E6%9E%84%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/3%E7%AC%AC%E4%B8%80%E7%AF%87.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt="alt text"></p>
+<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">https://zhuanlan.zhihu.com/p/60578464</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a></p>
+<p><a target="_blank" rel="noopener" href="https://candyknife.github.io/2022/12/22/hexo-02/">https://candyknife.github.io/2022/12/22/hexo-02/</a></p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>更新于 2025-05-30</p></div> 
+    <div class="post-entry__tags"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/github/" class="post-tags__link button"># github</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="post-tags__link button"># 个人网站</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2025/05/30/%E5%BD%B1%E5%83%8F%E7%BB%84%E5%AD%A6Radiomics/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            下一篇
+                        </div>
+                        <div class="nav__title">
+                            影像组学Radiomics
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2025 <a href="/">Alexa2077‘s Blogs</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
